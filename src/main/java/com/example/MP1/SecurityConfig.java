@@ -18,8 +18,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())  // Disable CSRF for simplicity
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/BloodLink/user/register", "/BloodLink/user/login").permitAll()
-                                .anyRequest().authenticated()
+                                .anyRequest().permitAll() // Allow all API patterns
                 );
         return http.build();
     }
